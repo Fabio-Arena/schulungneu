@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BildkarussellService } from './bildkarussell.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'schulungneu';
+
+  constructor(public bildservice:BildkarussellService){}
+
+  clickButton(){
+    this.bildservice.changeImage();
+  }
 }
