@@ -9,7 +9,7 @@ import { BildkarussellService } from './bildkarussell.service';
 export class AppComponent {
 
   constructor(public bildservice:BildkarussellService){}
-
+  
   clickButton(){
     this.bildservice.changeImage();
   }

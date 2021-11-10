@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BildkarussellService } from '../bildkarussell.service';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  constructor(public bildkarussell:BildkarussellService) { }
 
+  liste: string[] = this.bildkarussell.liste;
+  
+  
   ngOnInit(): void {
+  }
+
+  deleteRow(index:number){
+    this.bildkarussell.deleteRow(index);
   }
 
 }
