@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class BildkarussellService {
 
@@ -30,5 +30,6 @@ export class BildkarussellService {
     }else{
       console.log("Bitte gültige Url angeben")
     }
+    
   }
 }
