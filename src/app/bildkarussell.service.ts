@@ -9,9 +9,12 @@ export class BildkarussellService {
   bildpfad: string = this.liste[0];
   current_image = 0;
   index = 0;
-
+  status = "";
+  private timerHandleOn = 0;
+  private timerHandleOff = 0;
   getListe = () => this.liste;
   getBild = () => this.liste[this.current_image];
+  getStatus = () => this.status
 
   constructor(private http: HttpClient) { 
     this.abrufen();
@@ -50,9 +53,11 @@ export class BildkarussellService {
       this.liste.push(url);
       this.index++;
       this.speichern();
+      this.setStatus("success")
       console.log(this.index);
+
     }else{
-      //Fehlermeldung
+      this.setStatus("failed")
     }
 
   }
@@ -60,5 +65,13 @@ export class BildkarussellService {
   deleteRow(index:number){
     this.liste.splice(index, 1);
     this.speichern();
+  }
+
+  private setStatus(status: string) {
+    this.status = ""
+    clearTimeout(this.timerHandleOn)
+    clearTimeout(this.timerHandleOff)
+    this.timerHandleOn = setTimeout(() => this.status = status, 500)
+    this.timerHandleOff = setTimeout(() => this.status = "", 2000)
   }
 }
