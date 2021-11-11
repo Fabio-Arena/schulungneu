@@ -8,13 +8,16 @@ import { BildkarussellService } from '../bildkarussell.service';
 })
 export class TableComponent implements OnInit {
 
-  constructor(public bildkarussell:BildkarussellService) { }
+  constructor(public bildkarussell:BildkarussellService) { 
+    
+  }
 
-  liste: string[] = this.bildkarussell.liste;
+  liste: Array<string> = this.bildkarussell.liste;
   
   
   ngOnInit(): void {
   }
+  getListe = () => this.bildkarussell?.getListe();
 
   deleteRow(index:number){
     this.bildkarussell.deleteRow(index);

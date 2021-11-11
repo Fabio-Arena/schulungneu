@@ -10,7 +10,7 @@ import { BildkarussellService } from '../bildkarussell.service';
 export class BildComponent implements OnInit {
 
   constructor(public bildkarussell : BildkarussellService) { }
-
+  getBild = () => this. bildkarussell?.getBild()
   ngOnInit(): void {
     
   }
