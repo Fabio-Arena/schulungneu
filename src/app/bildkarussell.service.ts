@@ -49,7 +49,7 @@ export class BildkarussellService {
 
   addUrl(event:Event){
     const url = (<HTMLInputElement>event.target).value;
-    if(url.endsWith(".jpg") || url.endsWith(".png")){
+    if(url.endsWith(".jpg") || url.endsWith(".png") || url.endsWith(".gif")){
       this.liste.push(url);
       this.index++;
       this.speichern();

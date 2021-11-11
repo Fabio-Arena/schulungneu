@@ -1,7 +1,9 @@
-p {
+span {
     padding: 10px;
     background-color: mistyrose;
-    border: 2px solid red;
-    width: 130px;
+    border: 1px solid red;
+    width: 200px;
+    height: 50px;
+    margin-left: 5px;
   }
   
